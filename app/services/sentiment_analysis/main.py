@@ -1,4 +1,4 @@
-from ...entities.sentiment_analysis import SentimentAnalysisInput, SentimentAnalysisOutput
+from entities.sentiment_analysis import SentimentAnalysisInput, SentimentAnalysisOutput
 
 
 def distress_detector(input: SentimentAnalysisInput) -> SentimentAnalysisOutput:

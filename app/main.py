@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .entities.sentiment_analysis import SentimentAnalysisInput, SentimentAnalysisOutput
-from .services.sentiment_analysis.main import distress_detector
+from entities.sentiment_analysis import SentimentAnalysisInput, SentimentAnalysisOutput
+from services.sentiment_analysis.main import distress_detector
 
 app = FastAPI()
 
