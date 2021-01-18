@@ -52,6 +52,7 @@ poetry install
 To launch uvicorn (application server), use:
 
 ```bash
+cd app
 uvicorn main:app --reload
 ```
 
@@ -66,3 +67,14 @@ You can now browse to your [fastapi website](http://localhost:8080/docs).
 This should lead you to an error page since we haven't defined anything on the root of our application.
 
 However, FastAPI comes with auto documentation. Browse to the [documentation](http://localhost:8080/docs) and you can see you first route ready to go !
+
+So far, only one API route has been defined:
+
+http://localhost:8080/sentiment-analysis
+
+## Testing
+
+```bash
+cd app
+poetry run pytest
+```
