@@ -78,3 +78,16 @@ http://localhost:8080/sentiment-analysis
 cd app
 poetry run pytest
 ```
+
+## Going further
+
+I chose FastAPI because it's... fast !
+You get documentation out of the box, validation etc etc with minimum configuration.
+
+From here, you can:
+
+* Use your own models and algorithms within existing routes or create new ones
+* Deploy this website to a production server
+* Try others alternatives like https://www.deploymachinelearning.com/ (django, docker, AB testing)
+
+Feel free to reach me out at: adrien@may-sante.com
