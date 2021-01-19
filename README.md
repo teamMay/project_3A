@@ -1,6 +1,6 @@
 # MAY - Project ECM 3A 2021
 
-This is a project for student from [Ecole Centrale Marseille](https://www.centrale-marseille.fr) aiming to discover sentiment analysis through different methods and serve an AI model through a website or an API.
+This is a project for students from [Ecole Centrale Marseille](https://www.centrale-marseille.fr) aiming to discover sentiment analysis through different methods and serve an AI model via an API.
 
 ## Sentiment analysis served through a web API
 
@@ -66,11 +66,9 @@ You can now browse to your [fastapi website](http://localhost:8080/docs).
 
 This should lead you to an error page since we haven't defined anything on the root of our application.
 
-However, FastAPI comes with auto documentation. Browse to the [documentation](http://localhost:8080/docs) and you can see you first route ready to go !
+However, FastAPI comes with auto documentation. Browse to the [documentation page](http://localhost:8080/docs) and you can enjoy you first route ready to go !
 
-So far, only one API route has been defined:
-
-http://localhost:8080/sentiment-analysis
+So far, only one API route has been defined: http://localhost:8080/sentiment-analysis
 
 ## Testing
 
@@ -89,5 +87,6 @@ From here, you can:
 * Use your own models and algorithms within existing routes or create new ones
 * Deploy this website to a production server
 * Try others alternatives like https://www.deploymachinelearning.com/ (django, docker, AB testing)
+* Decide to create a frontend website (with React, Vue, Svelte or whatever framework) to consume your API
 
 Feel free to reach me out at: adrien@may-sante.com
