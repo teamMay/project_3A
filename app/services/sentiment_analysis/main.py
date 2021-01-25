@@ -1,6 +1,6 @@
 from entities.sentiment_analysis import SentimentAnalysisInput, SentimentAnalysisOutput
 import joblib
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegressionCV
 from googletrans import Translator
 
@@ -10,7 +10,7 @@ def translateToEng(sentence):
 
 
 def distress_detector(input: SentimentAnalysisInput) -> SentimentAnalysisOutput:
-	vectorizer = CountVectorizer(analyzer = "word", preprocessor = None, max_features = 6000, ngram_range=(1,5))
+	vectorizer = joblib.load('tfidf.sav')
 	eng_input = vectorizer.transform([translateToEng(input)])
 	loaded_model = joblib.load('LR_model.sav')
 	prediction = loaded_model.predict(eng_input)[0]
