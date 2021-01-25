@@ -15,10 +15,9 @@ def distress_detector(input: SentimentAnalysisInput) -> SentimentAnalysisOutput:
                              preprocessor = None,  
                              max_features = 6000, ngram_range=(1,5))
     eng_input = vectorizer.transform([translateToEng(input)])
-    
     loaded_model = joblib.load('LR_model.sav')
-	prediction = loaded_model.predict(eng_input)[0]
-	confidence = round(loaded_model.predict_proba(eng_input)[int(result)],2)
+    prediction = loaded_model.predict(eng_input)[0]
+    confidence = round(loaded_model.predict_proba(eng_input)[int(result)],2)
 	if prediction == 0:
 		label = 'Distressed'
 	else:
