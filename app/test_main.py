@@ -12,3 +12,10 @@ def test_post_sentiment_analysis():
         json={"text": "Bonjour, je suis désespérée, mon enfant ne dort plus"},
     )
     assert response.status_code == 200
+
+def test_post_topic_classification():
+    response = client.post(
+        "/topic-classification",
+        json={"text": "Bonjour, je suis désespérée, mon enfant ne dort plus"},
+    )
+    assert response.status_code == 200
