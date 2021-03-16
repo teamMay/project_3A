@@ -1,4 +1,4 @@
-from entities.sentiment_analysis import TopicClassificationInput, TopicClassificationOutput
+from entities.topic_classification import TopicClassificationInput, TopicClassificationOutput
 import sklearn.linear_model._logistic
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
@@ -15,7 +15,8 @@ labels = list(theme_dict.keys())
 
 def topic_detector(input: TopicClassificationInput) -> TopicClassificationOutput:
 	vectorizer = joblib.load(os.getcwd() + '/services/topic_classification/tfidf.sav')
-	vec_input = vectorizer.transform([input])
+	print(input)
+	vec_input = vectorizer.transform([input.text])
 	loaded_model = joblib.load(os.getcwd() +'/services/topic_classification/LR_model.sav')
 	prediction = loaded_model.predict(vec_input)[0]
 	proba = loaded_model.predict_proba(vec_input)[0]
