@@ -19,7 +19,6 @@ def topic_detector(input: TopicClassificationInput) -> TopicClassificationOutput
 	vec_input = vectorizer.transform([input.text])
 	loaded_model = joblib.load(os.getcwd() +'/services/topic_classification/LR_model.sav')
 	prediction = loaded_model.predict(vec_input)[0]
-	proba = loaded_model.predict_proba(vec_input)[0]
 	confidence = round(loaded_model.predict_proba(vec_input)[0][int(prediction)],2)
 	label = labels[prediction]
 	return {"label": label, "confidence": confidence}
